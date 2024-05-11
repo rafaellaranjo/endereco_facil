@@ -1,23 +1,19 @@
-version: '3.8'
 services:
   app:
-    build: .
-    ports:
-      - "3000:3000"
+    image: node:14
     volumes:
       - .:/app
-    environment:
-      NODE_ENV: development
-    depends_on:
-      - db
-    command: ["npm", "run", "dev"]
-
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    deploy:
+      replicas: 1
   db:
     image: postgres:latest
     restart: always
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: docker
-      POSTGRES_DB: endereco_facil
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
