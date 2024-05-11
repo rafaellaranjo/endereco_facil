@@ -36,6 +36,7 @@ npm install
 "migrations": [ "./src/shared/typeorm/migrations/*.ts" ],
 "cli": { "migrationsDir": "./src/shared/typeorm/migrations" }
 }
+```
 
 4. Após essa instalação execute a aplicação com o comando `yarn dev` ou `npm run dev`. O servidor estará em execução no endereço `http://localhost:3333`.
 
