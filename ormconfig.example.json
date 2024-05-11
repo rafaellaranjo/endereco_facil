@@ -1,10 +1,10 @@
 {
   "type": "postgres",
-  "host": "localhost",
+  "host": "db",
   "port": 5432,
   "username": "postgres",
   "password": "docker",
-  "database": "apivendas",
+  "database": "endereco_facil",
   "entities": ["./dist/modules/**/typeorm/entities/*.js"],
   "migrations": [
     "./dist/shared/typeorm/migrations/*.js"

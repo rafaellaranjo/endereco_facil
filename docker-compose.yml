@@ -8,4 +8,16 @@ services:
       - .:/app
     environment:
       NODE_ENV: development
-    command: npm run dev
+    depends_on:
+      - db
+    command: ["npm", "run", "dev"]
+
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: endereco_facil

@@ -1,5 +1,5 @@
-# Use a imagem Node.js como base
-FROM node:14
+# Use a imagem Node.js com PostgreSQL como base
+FROM node:14-postgres
 
 # Criação do diretório de trabalho
 WORKDIR /app
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Comando para iniciar a aplicação
-CMD ["npm run", "dev"]
+CMD ["npm", "run", "dev"]
